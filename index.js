@@ -132,7 +132,7 @@ class Airplane {
             };
         };
 
-        const newInstructor = new Lambdasian(
+        const newLambdasian = new Lambdasian(
             {"name": "Shenica",
             "age": 42,
             "location": "Iowa",
@@ -141,7 +141,7 @@ class Airplane {
             "catchPhrase": "With God, nothing shall be impossible."
             });
 
-        newInstructor.speak();
+        newLambdasian.speak();
 
 
 
@@ -162,34 +162,44 @@ class Airplane {
          '{student.name} receives a perfect score on {subject}'
 */
 
-class Instructor extends Lambdasian {
-    constructor(object) {
-        super (attr);
-        this.specialty = attr.specialty;
-        this.favLanguage = attr.favLanguage;
-        this.catchPhrase = attr.catchPhrase;
-    };
-    demo (subject) {
-        console.log(`Today we are learning about ${this.subject}.`);
-    };
-    grade (student,subject) {
-        return `${this.student.name} receives a perfect score in ${this.subject}.`;
-    };
-};
+        class Lambdasian {
+            constructor(object) {
+                this.name = object.name;
+                this.age = object.age;
+                this.location = object.location;
+            }
+            speak() {
+                return `Hello my name is ${this.name}. I am from ${this.location}.`;
+            };
+        };
 
-const lambdaStudent = (
-    {"name": "Shenica",
-    "age": 42,
-    "location": "Iowa",
-    "specialty": "gitHub",
-    "favLanguage": "JavaScript",
-    "catchPhrase": "With God, nothing shall be impossible."
-    }
-);
+        class Instructor extends Lambdasian {
+            constructor(object) {
+                super(object);
+                this.specialty = object.specialty;
+                this.favLanguage = object.favLanguage;
+                this.catchPhrase = object.catchPhrase;
+            };
+            demo (subject) {
+                console.log(`Today we are learning about ${subject}.`);
+            };
+            grade (student,subject) {
+                return `${student} receives a perfect score in ${subject}.`;
+            };
+        };
 
-const newInstructor = new Lambdasian({"name": "Shenica", "age": 43, "location": "California"});
+        const newInstructor = new Instructor(
+            {"name": "Shenica",
+            "age": 42,
+            "location": "Iowa",
+            "specialty": "gitHub",
+            "favLanguage": "JavaScript",
+            "catchPhrase": "With God, nothing shall be impossible."}
+        );
 
-newInstructor.speak();
+        console.log(newInstructor);
+        newInstructor.demo("JS Classes");
+        newInstructor.grade("Shenica", "CSS Design");
 
 /*
   TASK 5
