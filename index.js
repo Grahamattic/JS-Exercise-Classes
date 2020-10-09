@@ -132,9 +132,16 @@ class Airplane {
             };
         };
 
-        const newLambdasian = new Lambdasian({"name": "Shenica", "age": 43, "location": "California"});
+        const newInstructor = new Lambdasian(
+            {"name": "Shenica",
+            "age": 42,
+            "location": "Iowa",
+            "specialty": "gitHub",
+            "favLanguage": "JavaScript",
+            "catchPhrase": "With God, nothing shall be impossible."
+            });
 
-        newLambdasian.speak();
+        newInstructor.speak();
 
 
 
@@ -155,34 +162,34 @@ class Airplane {
          '{student.name} receives a perfect score on {subject}'
 */
 
-        class Instructor extends Lambdasian {
-            constructor(object) {
-                super (attr);
-                this.specialty = attr.specialty;
-                this.favLanguage = attr.favLanguage;
-                this.catchPhrase = attr.catchPhrase;
-            };
-            demo (subject) {
-                console.log(`Today we are learning about ${this.subject}.`);
-            };
-            grade (student,subject) {
-                return `${this.student.name} receives a perfect score in ${this.subject}.`;
-            };
-        };
+class Instructor extends Lambdasian {
+    constructor(object) {
+        super (attr);
+        this.specialty = attr.specialty;
+        this.favLanguage = attr.favLanguage;
+        this.catchPhrase = attr.catchPhrase;
+    };
+    demo (subject) {
+        console.log(`Today we are learning about ${this.subject}.`);
+    };
+    grade (student,subject) {
+        return `${this.student.name} receives a perfect score in ${this.subject}.`;
+    };
+};
 
-        const lambdaStudent = (
-            {"name": "Shenica",
-            "age": 42,
-            "location": "Iowa",
-            "specialty": "gitHub",
-            "favLanguage": "JavaScript",
-            "catchPhrase": "With God, nothing shall be impossible."
-            }
-        );
+const lambdaStudent = (
+    {"name": "Shenica",
+    "age": 42,
+    "location": "Iowa",
+    "specialty": "gitHub",
+    "favLanguage": "JavaScript",
+    "catchPhrase": "With God, nothing shall be impossible."
+    }
+);
 
-        const newLambdasian = new Lambdasian({"name": "Shenica", "age": 43, "location": "California"});
+const newInstructor = new Lambdasian({"name": "Shenica", "age": 43, "location": "California"});
 
-        newLambdasian.speak();
+newInstructor.speak();
 
 /*
   TASK 5
@@ -201,23 +208,25 @@ class Airplane {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 
-        class Student extends Lambdasian {
-            constructor(object) {
-                super (attr);
-                this.name = name;
-                this.age = age;
-                this.location = location;
-                this.previousBackground = "cashier";
-                this.className = "WEBPT23";
-                this.favSubjects = ["Bible", "CSS", "HTML","JS"];
-            };
-            demo (subject) {
-                console.log(`Today we are learning about ${this.subject}.`);
-            };
-            grade (student,subject) {
-                console.log(`${this.student.name} receives a perfect score in ${this.subject}.`);
-            };
-        };
+class Student extends Lambdasian {
+    constructor(object) {
+        super (attr);
+        this.previousBackground = "";
+        this.className = "";
+        this.favSubjects = [];
+        Lambdasian.call(this, name,age);
+    };
+    demo (subject) {
+        console.log(`Today we are learning about ${this.subject}.`);
+    };
+    grade (student,subject) {
+        console.log(`${this.student.name} receives a perfect score in ${this.subject}.`);
+    };
+};
+
+const newLambdasian = new Lambdasian({"name": "Shenica", "age": 43, "location": "California"});
+
+newLambdasian.speak();
 
 /*
   TASK 6
