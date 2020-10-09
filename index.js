@@ -197,7 +197,6 @@ class Airplane {
             "catchPhrase": "With God, nothing shall be impossible."}
         );
 
-        console.log(newInstructor);
         newInstructor.demo("JS Classes");
         newInstructor.grade("Shenica", "CSS Design");
 
@@ -213,30 +212,50 @@ class Airplane {
     - The constructor should also initialize `previousBackground`, `className` and `favSubjects` properties
      on the instance.
     - Student instances have the following methods:
-        + `listSubjects` a method that returns all of the student's favSubjects in a single string: `Loving HTML, CSS, JS!`.
-        + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
+        + `listSubjects` a method that returns all of the student's favSubjects in a single string: 
+        `Loving HTML, CSS, JS!`.
+        + `PRAssignment` a method that receives a subject as an argument and returns `student.name has 
+        submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 
-class Student extends Lambdasian {
-    constructor(object) {
-        super (attr);
-        this.previousBackground = "";
-        this.className = "";
-        this.favSubjects = [];
-        Lambdasian.call(this, name,age);
-    };
-    demo (subject) {
-        console.log(`Today we are learning about ${this.subject}.`);
-    };
-    grade (student,subject) {
-        console.log(`${this.student.name} receives a perfect score in ${this.subject}.`);
-    };
-};
+        class Lambdasian {
+            constructor(object) {
+                this.name = object.name;
+                this.age = object.age;
+                this.location = object.location;
+            }
+            speak() {
+                return `Hello my name is ${this.name}. I am from ${this.location}.`;
+            };
+        };
 
-const newLambdasian = new Lambdasian({"name": "Shenica", "age": 43, "location": "California"});
+        class Student extends Lambdasian {
+            constructor(object) {
+                super(object);
+                this.previousBackground = object.previousBackground;
+                this.className = object.className;
+                this.favSubjects = object.favSubjects;
+            };
+            listSubjects() {
+                console.log(`Loving ${this.favSubjects}!`);
+            };
+            PRAssignment(subject) {
+                console.log(`${this.name} has submitted a PR for ${subject}.`);
+            };
+        };
 
-newLambdasian.speak();
+        const newStudent = new Student(
+            {"name": "Shenica",
+            "age": 42,
+            "location": "Iowa",
+            "previousBackground": "Teacher",
+            "className": "CSS & HTML",
+            "favSubjects": "CSS, HTML, Web Design"}
+        );
+
+        newStudent.listSubjects();
+        newStudent.PRAssignment("JS-Classes");
 
 /*
   TASK 6
