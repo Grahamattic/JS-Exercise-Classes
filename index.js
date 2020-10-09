@@ -310,7 +310,7 @@ class Airplane {
                 return `${this.name} announces to ${channel}, @channel standUp time!`
             }
             debugsCode(studentObject,subject) {
-                return `${studentObject.name} debugs ${studentObject.name}'s code on ${subject}`;
+                return `${this.name} debugs ${studentObject.name}'s code on ${subject}`;
             }
         };
         const newPM = new ProjectManager(
@@ -325,9 +325,9 @@ class Airplane {
         );
 
         const Student = (
-            {"name": "Shenica",
-            "age": 42,
-            "location": "Iowa",
+            {"name": "Renee",
+            "age": 28,
+            "location": "Kansas",
             "previousBackground": "Cashier",
             "className": "CSS & HTML",
             "favSubjects": "CSS, HTML, Web Design"}
@@ -338,8 +338,11 @@ class Airplane {
 
 /*
   STRETCH PROBLEM (no tests!)
-    - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
-    - Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
+    - Extend the functionality of the Student by adding a prop called grade and setting it equal to a 
+    number between 1-100.
+    - Now that our students have a grade build out a method on the Instructor (this will be used by 
+      _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. 
+      _Math.random_ will help.
     - Add a graduate method to a student.
       + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
