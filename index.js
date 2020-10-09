@@ -200,8 +200,9 @@ class Airplane {
         newInstructor.demo("JS Classes");
         newInstructor.grade("Shenica", "CSS Design");
 
-/*
-  TASK 5
+
+
+/* TASK 5
     - Write a Student class extending Lambdasian.
     - Its constructor takes a single argument -  an object with the following keys:
         + All the keys used to initialize instances of Lambdasian.
@@ -257,8 +258,9 @@ class Airplane {
         newStudent.listSubjects();
         newStudent.PRAssignment("JS-Classes");
 
-/*
-  TASK 6
+
+        
+/* TASK 6
     - Write a ProjectManager class extending Instructor.
     - Its constructor takes a single argument - an object with the following keys:
         + All the keys used to initialize instances of Instructor.
