@@ -181,7 +181,7 @@ class Airplane {
                 this.catchPhrase = object.catchPhrase;
             };
             demo (subject) {
-                console.log(`Today we are learning about ${subject}.`);
+                return `Today we are learning about ${subject}.`;
             };
             grade (student,subject) {
                 return `${student} receives a perfect score in ${subject}.`;
@@ -239,10 +239,10 @@ class Airplane {
                 this.favSubjects = object.favSubjects;
             };
             listSubjects() {
-                console.log(`Loving ${this.favSubjects}!`);
+                return `Loving ${this.favSubjects}!`;
             };
             PRAssignment(subject) {
-                console.log(`${this.name} has submitted a PR for ${subject}.`);
+                return `${this.name} has submitted a PR for ${subject}.`;
             };
         };
 
@@ -259,7 +259,7 @@ class Airplane {
         newStudent.PRAssignment("JS-Classes");
 
 
-        
+
 /* TASK 6
     - Write a ProjectManager class extending Instructor.
     - Its constructor takes a single argument - an object with the following keys:
@@ -269,12 +269,72 @@ class Airplane {
     - Its constructor calls the parent constructor passing to it what it needs.
     - The constructor should also initialize `gradClassName` and `favInstructor` properties on the instance.
     - ProjectManager instances have the following methods:
-        + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
-        + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
+        + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, 
+        @channel standy times!`
+        + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs 
+        {student.name}'s code on {subject}`
 */
-class ProjectManager {
 
-}
+        class Lambdasian {
+            constructor(object) {
+                this.name = object.name;
+                this.age = object.age;
+                this.location = object.location;
+          }
+          speak() {
+              return `Hello my name is ${this.name}. I am from ${this.location}.`;
+          };
+        };
+
+        class Instructor extends Lambdasian {
+            constructor(object) {
+                super(object);
+                this.specialty = object.specialty;
+                this.favLanguage = object.favLanguage;
+                this.catchPhrase = object.catchPhrase;
+            };
+            demo (subject) {
+                console.log(`Today we are learning about ${subject}.`);
+            };
+            grade (student,subject) {
+                return `${student} receives a perfect score in ${subject}.`;
+            };
+        };
+        class ProjectManager extends Instructor {
+            constructor(object) {
+                super(object);
+                this.gradClassName = object.gradClassName;
+                this.favInstructor = object.favInstructor;
+            };
+            standUp(channel){
+                return `${this.name} announces to ${channel}, @channel standUp time!`
+            }
+            debugsCode(studentObject,subject) {
+                return `${studentObject.name} debugs ${studentObject.name}'s code on ${subject}`;
+            }
+        };
+        const newPM = new ProjectManager(
+            {"name": "Shenica",
+            "age": 42,
+            "location": "Iowa",
+            "specialty": "gitHub",
+            "favLanguage": "JavaScript",
+            "catchPhrase": "With God, nothing shall be impossible.",
+            "gradClassName": "WEB350",
+            "favInstructor": "Pace Ellsworth"}
+        );
+
+        const Student = (
+            {"name": "Shenica",
+            "age": 42,
+            "location": "Iowa",
+            "previousBackground": "Cashier",
+            "className": "CSS & HTML",
+            "favSubjects": "CSS, HTML, Web Design"}
+        );
+
+        newPM.standUp("WEBPT23");
+        //newPM.debugsCode(Student, "JavaSript");
 
 /*
   STRETCH PROBLEM (no tests!)
