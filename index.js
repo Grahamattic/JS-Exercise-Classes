@@ -333,8 +333,10 @@ class Airplane {
             "favSubjects": "CSS, HTML, Web Design"}
         );
 
-        newPM.standUp("WEBPT23");
-        //newPM.debugsCode(Student, "JavaSript");
+        //newPM.standUp("WEBPT23");
+        newPM.debugsCode(Student, "JavaSript");
+        //newPM.demo("Classes");
+        //newPM.speak();
 
 /*
   STRETCH PROBLEM (no tests!)
